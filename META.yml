@@ -15,10 +15,10 @@ name: XML-Catalogs
 provides:
   XML::Catalogs:
     file: lib/XML/Catalogs.pm
-    version: v1.0.1
+    version: v1.0.2
 requires:
   Carp: 0
   File::ShareDir: 0
   URI::file: 0
   version: 0
-version: v1.0.1
+version: v1.0.2

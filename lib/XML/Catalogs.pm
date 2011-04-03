@@ -5,7 +5,7 @@ package XML::Catalogs;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.1');
+use version; our $VERSION = qv('v1.0.2');
 
 
 use File::ShareDir qw( );
@@ -44,6 +44,7 @@ sub get_catalog_url {
 sub notify_libxml {
     my $class = shift;
     require XML::LibXML;
+    XML::LibXML->VERSION(1.53);
     XML::LibXML->load_catalog(
         $class->get_catalog_path()
     );
@@ -61,7 +62,7 @@ XML::Catalogs - Basic framework to provide DTD catalogs
 
 =head1 VERSION
 
-Version 1.0.1
+Version 1.0.2
 
 
 =head1 SYNOPSIS
@@ -127,9 +128,10 @@ referenced by the catalog instead of downloading
 them. This only affects the current process.
 
 This mechanism does not stop working when XML::LibXML's
-C<< ->no_network(1) >> option is used. When using that
-option, XML::LibXML refrains from downloading remote
-resources.
+C<< no_network => 1 >> option is used.
+
+Note that XML::LibXML version 1.53 is required for
+this features.
 
 
 =item C<< $subclass->get_catalog_url() >>
