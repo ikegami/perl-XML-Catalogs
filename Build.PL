@@ -5,6 +5,7 @@ use Module::Build;
 
 my $build = Module::Build->new(
     module_name => 'XML::Catalogs',
+    license     => 'CC0_1_0',
     configure_requires => {
         'Module::Build' => 0,
     },

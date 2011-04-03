@@ -5,7 +5,7 @@ package XML::Catalogs;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.2');
+use version; our $VERSION = qv('v1.0.3');
 
 
 use File::ShareDir qw( );
@@ -62,7 +62,7 @@ XML::Catalogs - Basic framework to provide DTD catalogs
 
 =head1 VERSION
 
-Version 1.0.2
+Version 1.0.3
 
 
 =head1 SYNOPSIS
@@ -204,7 +204,15 @@ Eric Brine, C<< <ikegami@adaelis.com> >>
 
 =head1 COPYRIGHT & LICENSE
 
-Public domain. No rights reserved.
+No rights reserved.
+
+The author has dedicated the work to the Commons by waiving all of his
+or her rights to the work worldwide under copyright law and all related or
+neighboring legal rights he or she had in the work, to the extent allowable by
+law.
+
+Works under CC0 do not require attribution. When citing the work, you should
+not imply endorsement by the author.
 
 
 =cut
