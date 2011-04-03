@@ -5,7 +5,7 @@ package XML::Catalogs;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.0');
+use version; our $VERSION = qv('v1.0.1');
 
 
 use File::ShareDir qw( );
@@ -61,7 +61,7 @@ XML::Catalogs - Basic framework to provide DTD catalogs
 
 =head1 VERSION
 
-Version 1.0.0
+Version 1.0.1
 
 
 =head1 SYNOPSIS
@@ -98,24 +98,28 @@ Instead, it relies on them being in the system's XML catalog.
 This is not always configured properly for a number of
 reasons.
 
-This module provides a simple framework to notify XML::LibXML
-of DTDs that may not be present in the system's catalog.
+An XML catalog is simply a set of DTDs and a table of contents
+that associates DTD identifiers with the DTDs.
+
+This module provides a simple framework to package XML catalogs.
+It also provides a simple method to notify XML::LibXML of DTDs
+that may not be present in the system's catalog.
 
 It works on all platforms, it works without requiring root
-priviledges, and it works with CPAN's dependancy system.
+priviledges, and it works with CPAN's dependency system.
 
 
 =head1 CLASS METHODS
 
 =over
 
-=item C<<use XML::Catalogs::FOO -libxml>>
+=item C<< use XML::Catalogs::FOO -libxml >>
 
 This loads XML::Catalogs::FOO and calls
-C<<XML::Catalogs::FOO->notify_libxml()>>
+C<< XML::Catalogs::FOO->notify_libxml() >>
 
 
-=item C<<$subclass->notify_libxml()>>
+=item C<< $subclass->notify_libxml() >>
 
 This method informs L<XML::LibXML> of the subclass's
 catalog. XML::LibXML will use the local DTDs
@@ -123,17 +127,17 @@ referenced by the catalog instead of downloading
 them. This only affects the current process.
 
 This mechanism does not stop working when XML::LibXML's
-C<<->no_network(1)>> option is used. When using that
+C<< ->no_network(1) >> option is used. When using that
 option, XML::LibXML refrains from downloading remote
 resources.
 
 
-=item C<<$subclass->get_catalog_url()>>
+=item C<< $subclass->get_catalog_url() >>
 
 Returns a file:// URL to the subclass's catalog.
 
 
-=item C<<$subclass->get_catalog_path()>>
+=item C<< $subclass->get_catalog_path() >>
 
 Returns the file path of the subclass's catalog.
 
@@ -150,6 +154,7 @@ Returns the file path of the subclass's catalog.
 
 =item * L<XML::Catalogs::HTML>, a module using this framework.
 
+=item * L<http://www.w3.org/blog/systeam/2008/02/08/w3c_s_excessive_dtd_traffic>, An example of the real world effects of not having local DTDs.
 
 =back
 
