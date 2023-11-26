@@ -1,7 +1,8 @@
 Build.PL
-Changes.txt
+Changes
 LICENSE.txt
 MANIFEST
+MANIFEST.SKIP
 README.txt
 lib/XML/Catalogs.pm
 t/00_load.t
