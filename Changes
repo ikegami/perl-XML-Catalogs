@@ -1,5 +1,8 @@
 Revision history for XML-Catalogs
 
+1.4.0   2023-11-26
+        Document the need for `load_ext_dtd => 1`.
+
 1.0.3   2011-03-28
         Specified license more explicitly.
 

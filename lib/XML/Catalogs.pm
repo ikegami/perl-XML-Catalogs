@@ -1,11 +1,10 @@
-use 5;
 
 package XML::Catalogs;
 
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.3');
+use version; our $VERSION = qv('v1.4.0');
 
 
 use File::ShareDir qw( );
@@ -62,7 +61,7 @@ XML::Catalogs - Basic framework to provide DTD catalogs
 
 =head1 VERSION
 
-Version 1.0.3
+Version 1.4.0
 
 
 =head1 SYNOPSIS
@@ -126,6 +125,9 @@ This method informs L<XML::LibXML> of the subclass's
 catalog. XML::LibXML will use the local DTDs
 referenced by the catalog instead of downloading
 them. This only affects the current process.
+
+To have any effect, XML::LibXML's
+C<< load_ext_dtd => 1 >> option must be used.
 
 This mechanism does not stop working when XML::LibXML's
 C<< no_network => 1 >> option is used.
