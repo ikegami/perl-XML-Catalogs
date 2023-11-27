@@ -4,7 +4,7 @@ package XML::Catalogs;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.4.0');
+use version; our $VERSION = qv('v1.5.0');
 
 
 use File::ShareDir qw( );
@@ -61,7 +61,7 @@ XML::Catalogs - Basic framework to provide DTD catalogs
 
 =head1 VERSION
 
-Version 1.4.0
+Version 1.5.0
 
 
 =head1 SYNOPSIS
